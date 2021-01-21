@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ثبت نام</title>
+</head>
+<body>
+<form method="post" action="/checking">
+
+    <div class="row">
+        <div >
+            <p>
+                <input  type="text" nid="fullName" name="fullName" value="" placeholder="Enter fullName:" />
+                <input  type="text" nid="nationalCode" name="nationalCode" value="" placeholder="Enter nationalCode:" />
+                <select  name="gender">
+                    <option value="female">زن</option>
+                    <option value="male">مرد</option>
+                </select>
+                <input  type="date" nid="bd" name="bd" value="" placeholder="Enter birthDay:" />
+                <input  type="text" nid="phoneNumber" name="phoneNumber" value="" placeholder="Enter phoneNumber:" />
+                <input  type="text" nid="anyDeskId" name="anyDeskId" value="" placeholder="Enter anyDeskId:" />
+                <input  type="text" nid="email" name="email" value="" placeholder="Enter email:" />
+                <input  type="text" nid="password" name="password" value="" placeholder="Enter password: " />
+            </p>
+
+        </div>
+
+        <div >
+            <ul class="actions">
+                <li><button type="submit" name="action" >Calculate</button></li>
+            </ul>
+        </div>
+    </div>
+</form>
+</body>
+</html>
