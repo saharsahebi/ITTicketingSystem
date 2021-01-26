@@ -19,8 +19,19 @@ public class Client {
     private String bd;
     private String phoneNumber;
     private String email;
-    private Integer anyDeskID;
 
+    public Client(Integer nationalCode, String name, String gender, String bd, String phoneNumber, String email) {
+        this.nationalCode = nationalCode;
+        this.name = name;
+        this.gender = gender;
+        this.bd = bd;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public Client() {
+
+    }
 
     public Integer getId() {
         return id;
@@ -78,11 +89,5 @@ public class Client {
         this.email = email;
     }
 
-    public Integer getAnyDeskID() {
-        return anyDeskID;
-    }
 
-    public void setAnyDeskID(Integer anyDeskID) {
-        this.anyDeskID = anyDeskID;
-    }
 }
