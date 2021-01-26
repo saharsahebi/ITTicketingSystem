@@ -1,2 +1,4 @@
-package teamworkmanagment.app.Controller;public class ClientTicketController {
+package teamworkmanagment.app.Controller;
+
+public class ClientTicketController {
 }

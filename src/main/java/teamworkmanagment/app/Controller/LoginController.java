@@ -23,7 +23,7 @@ public class LoginController {
     @Autowired
     private SupportAdminRepository supportAdminRepository;
 
-    private static Client okClient;
+     static Client okClient;
 
     @PostMapping(path="/checking") // Map ONLY POST Requests
     //public @ResponseBody
@@ -33,7 +33,6 @@ public class LoginController {
         // @RequestParam means it is a parameter from the GET or POST request
 
             System.out.printf("From react:"+client.getEmail());
-            Client okClient=new Client();
             List<Client> clientList= (List<Client>) clientRepository.findAll();
             HttpStatus httpStatus = null;
             for (Client myClient:clientList)
