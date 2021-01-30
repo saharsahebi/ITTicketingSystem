@@ -40,6 +40,7 @@ public class ClientProjectController {
     @PostMapping(path="/client-projects")
     Project createProject(@RequestBody Project project)
     {
+
        project.setClientId(LoginController.okClient.getId());
        project.setProjectStatus(ProjectStatus.NEW);
        project.setStartTime("");
