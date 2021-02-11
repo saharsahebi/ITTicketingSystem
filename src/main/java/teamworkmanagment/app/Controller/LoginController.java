@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import teamworkmanagment.app.Entity.Client;
+import teamworkmanagment.app.Entity.DevTeamMember;
 import teamworkmanagment.app.Repository.ClientRepository;
 import teamworkmanagment.app.Repository.DevTeamMembersRepository;
 import teamworkmanagment.app.Repository.SupportAdminRepository;
@@ -24,10 +25,11 @@ public class LoginController {
     private SupportAdminRepository supportAdminRepository;
 
      static Client okClient;
+     static DevTeamMember okdevTeamMember;
 
-    @PostMapping(path="/checking") // Map ONLY POST Requests
+    @PostMapping(path="/checkingclient") // Map ONLY POST Requests
     //public @ResponseBody
-    public HttpStatus login (@RequestBody Client client) {
+    public HttpStatus loginClient (@RequestBody Client client) {
         //@RequestParam String name, @RequestParam String email,@RequestParam String gender,@RequestParam String bd,@RequestParam Integer anyDeskId,@RequestParam Integer nationalCode,@RequestParam String phoneNumber
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
@@ -47,6 +49,43 @@ public class LoginController {
 
         return httpStatus;
     }
+    @PostMapping(path="/checkingdeveloper") // Map ONLY POST Requests
+    //public @ResponseBody
+    public String loginDeveloper (@RequestBody DevTeamMember devTeamMember) {
+        //@RequestParam String name, @RequestParam String email,@RequestParam String gender,@RequestParam String bd,@RequestParam Integer anyDeskId,@RequestParam Integer nationalCode,@RequestParam String phoneNumber
+        // @ResponseBody means the returned String is the response, not a view name
+        // @RequestParam means it is a parameter from the GET or POST request
+        String type="";
+        System.out.printf("From react:"+devTeamMember.getEmail());
+        List<DevTeamMember> devTeamMemberList= (List<DevTeamMember>) devTeamMembersRepository.findAll();
+        HttpStatus httpStatus = null;
+        for (DevTeamMember myDeveloper:devTeamMemberList)
+        {
+            if (myDeveloper.getEmail().equals(devTeamMember.getEmail()))
+            {
+                System.out.printf("yepp");
+                okdevTeamMember=myDeveloper;
+            }
+        }
+        if (okdevTeamMember.getDevType().equals("مدیرپروژه"))
+        {
+            type="manager";
+        }
+        if (okdevTeamMember.getDevType().equals("بک اند کار"))
+        {
+            type="ok";
+        }
+
+        if (okdevTeamMember.getDevType().equals("فرانت کار"))
+        {
+            type="ok";
+        }
+
+        return type;
+    }
+
+
+
 
 
 }

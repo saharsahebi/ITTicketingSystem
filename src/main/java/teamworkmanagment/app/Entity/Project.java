@@ -20,8 +20,10 @@ public class Project {
     private String repoAddress;
     private Integer clientId;
     private Integer teamId;
-    private String fileAddress;
+    private Long fileId;
     private String deadline;
+
+
 
 
     public Integer getTeamId() {
@@ -80,12 +82,12 @@ public class Project {
         this.clientId = clientId;
     }
 
-    public String getFileAddress() {
-        return fileAddress;
+    public Long getFileId() {
+        return fileId;
     }
 
-    public void setFileAddress(String fileAddress) {
-        this.fileAddress = fileAddress;
+    public void setFileId(Long fileId) {
+        this.fileId = fileId;
     }
 
     public String getDeadline() {

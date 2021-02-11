@@ -21,7 +21,7 @@ public class Ticket {
     private String description;
     private TicketType type;
     private String date;
-    private String fileAddress;
+    private Long fileId;
     private TicketStatus status;
     private String destination;
     private String answer;
@@ -82,12 +82,12 @@ public class Ticket {
         this.date = date;
     }
 
-    public String getFileAddress() {
-        return fileAddress;
+    public Long getFileId() {
+        return fileId;
     }
 
-    public void setFileAddress(String fileAddress) {
-        this.fileAddress = fileAddress;
+    public void setFileId(Long fileId) {
+        this.fileId = fileId;
     }
 
     public TicketStatus getStatus() {
